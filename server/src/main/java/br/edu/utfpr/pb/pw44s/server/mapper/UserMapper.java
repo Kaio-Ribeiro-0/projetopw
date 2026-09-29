@@ -8,7 +8,6 @@ import org.mapstruct.MappingConstants;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface UserMapper {
-    @Mapping(target = "id", ignore = true)
     UserDTO toDTO(User user);
     User toEntity(UserDTO userDTO);
 }
