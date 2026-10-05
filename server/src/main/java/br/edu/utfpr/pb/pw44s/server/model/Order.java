@@ -29,4 +29,8 @@ public class Order {
     @OneToMany
     @JoinColumn(name = "order_id", referencedColumnName = "id")
     private List<OrderItems> orderItems;
+
+    @ManyToOne
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
 }

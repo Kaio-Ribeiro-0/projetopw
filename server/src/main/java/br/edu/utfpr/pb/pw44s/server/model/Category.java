@@ -23,8 +23,4 @@ public class Category {
     @Size(min = 1, max = 100)
     @Column(length = 50, nullable = false)
     private String name;
-
-    @OneToMany
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private List<Product> products;
 }

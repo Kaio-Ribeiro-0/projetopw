@@ -45,8 +45,4 @@ public class Address {
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
-
-    @OneToMany
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private List<Order> orders;
 }

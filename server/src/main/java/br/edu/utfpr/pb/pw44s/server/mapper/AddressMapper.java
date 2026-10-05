@@ -10,6 +10,7 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface AddressMapper {
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "user", ignore = true)
     Address toEntity(AddressDTO addressDTO);
     AddressDTO toDTO(Address address);
 }

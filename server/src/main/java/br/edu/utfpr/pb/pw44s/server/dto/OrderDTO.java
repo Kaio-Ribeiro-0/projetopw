@@ -17,4 +17,7 @@ public class OrderDTO {
     private LocalDateTime dateTime;
 
     private Long userId;
+
+    private Long addressId;
+
 }

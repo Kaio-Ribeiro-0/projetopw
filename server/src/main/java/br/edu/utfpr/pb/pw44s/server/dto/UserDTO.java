@@ -17,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class UserDTO {
+
     @NotNull
     @Size(min = 4, max = 50)
     private String displayName;
@@ -35,6 +36,5 @@ public class UserDTO {
     @Pattern(regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
     private String email;
 
-    @OneToMany(mappedBy = "user")
     private List<Address> addresses;
 }
