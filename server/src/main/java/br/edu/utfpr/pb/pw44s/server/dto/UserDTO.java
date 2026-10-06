@@ -1,5 +1,6 @@
 package br.edu.utfpr.pb.pw44s.server.dto;
 
+import br.edu.utfpr.pb.pw44s.server.annotation.UniqueUsername;
 import br.edu.utfpr.pb.pw44s.server.model.Address;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
@@ -24,7 +25,9 @@ public class UserDTO {
 
     @NotNull
     @Size(min = 4, max = 50)
+    @UniqueUsername
     private String username;
+
 
     @NotNull
     @Size(min = 6)
