@@ -4,11 +4,10 @@ import br.edu.utfpr.pb.pw44s.server.dto.UserDTO;
 import br.edu.utfpr.pb.pw44s.server.mapper.UserMapper;
 import br.edu.utfpr.pb.pw44s.server.model.User;
 import br.edu.utfpr.pb.pw44s.server.service.UserService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -23,8 +22,8 @@ public class UserController {
     }
 
     @PostMapping
-    @ResponseStatus(org.springframework.http.HttpStatus.CREATED)
-    public void createUser(UserDTO UserDTO) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createUser(@Valid @RequestBody UserDTO UserDTO) {
         User user = userMapper.toEntity(UserDTO);
         userService.save(user);
         log.info("User created: {}", user);
